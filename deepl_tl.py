@@ -4,7 +4,7 @@ import sys
 import srt
 from deepl import DeepLCLI
 
-delimiter = "\n---\n"
+delimiter = "|| \n---\n ||"
 
 def batch_deepl_text(segments: list[str], max_len=3000):
 
