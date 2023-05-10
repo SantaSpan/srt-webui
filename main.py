@@ -144,6 +144,8 @@ def gradio_translate(target_file, from_language, to_language):
     
 
 def gradio():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     inputs = [gr.File(label="Upload File"), gr.Text(label="From Language"),gr.Text(label="To Language")]
     interface = gr.Interface(fn=gradio_translate,
                              inputs=inputs,
