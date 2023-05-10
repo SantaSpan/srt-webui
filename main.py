@@ -1,11 +1,11 @@
 import asyncio
-from fnmatch import translate
 import time
 from dataclasses import replace
+from fnmatch import translate
 
+import gradio as gr
 import srt
 from deepl import DeepLCLI
-import gradio as gr
 
 from_lang = "en"
 to_lang = "ja"
@@ -143,7 +143,7 @@ def gradio_translate(target_file, from_language, to_language):
     
 
 def gradio():
-    inputs = [gr.File(label="Upload File"), gr.Text(label="From Language"),gr.Text(label="To Language")]
+    inputs = [gr.File(label="Upload File", type="binary"), gr.Text(label="From Language"),gr.Text(label="To Language")]
     interface = gr.Interface(fn=gradio_translate,
                              inputs=inputs,
                              outputs = [
