@@ -38,7 +38,9 @@ def batch_get_translations(deepl, segment_texts):
     for count, batch in enumerate(batched_segments):
         print(count)
         print(len(batch))
+        print(batch)
         translated = deepl.translate(batch)
+        print(translated)
         batch_segments = translated.split(delimiter)
         batch_segments = [x for x in batch_segments if x.strip()]
         translated_segments.extend(batch_segments)
