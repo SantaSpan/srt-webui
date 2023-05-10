@@ -154,14 +154,13 @@ def gradio():
     demo = gr.TabbedInterface([interface], tab_names=["deepl"])
 
     # # Queue up the demo
-    # if app_config.queue_concurrency_count is not None and app_config.queue_concurrency_count > 0:
-    #     demo.queue(concurrency_count=app_config.queue_concurrency_count)
+    demo.queue(concurrency_count=4)
    
     demo.launch(share=True)
 
 if __name__ == "__main__":
     # maybe bad
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
+    # loop = asyncio.new_event_loop()
+    # asyncio.set_event_loop(loop)
     gradio()
     #translate_file("./sawagi.srt", "new_test.srt", langs=["en", "ja"])
