@@ -31,9 +31,9 @@ def batch_get_translations(deepl, segment_texts):
     translated_segments = []
     batched_segments = batch_deepl_text(segment_texts)
     
-    print(len(batched_segments))
+    print(f"Text split into {len(batched_segments)} parts")
+    print(f"Estimated time: {len(batched_segments) * 5}")
     for count, batch in enumerate(batched_segments):
-        print(count)
         translated = deepl.translate(batch)
         batch_segments = translated.split(delimiter)
         batch_segments = [x for x in batch_segments if x.strip()]

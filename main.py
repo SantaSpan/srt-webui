@@ -11,7 +11,7 @@ from deepl import DeepLCLI
 
 default_from_lang = "en"
 default_to_lang = "ja"
-output_path = ""
+output_path = "/content/new.srt"
 
 def gradio_translate(target_file, from_language, to_language):
     target_file = target_file.name
