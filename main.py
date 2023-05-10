@@ -128,7 +128,7 @@ def translate_file(input_file, output_file, langs=["ja", "en"]):
 def gradio_translate(target_file, from_language, to_language):
     deepl = DeepLCLI(from_language, to_language, timeout=150000, use_dom_submit=True)
     file_data = target_file.read()
-    file_data = file_data.encode("utf-8")
+    file_data = file_data.decode("utf-8")
     print(file_data)
     subs = list(srt.parse(file_data))
     segments = [x.content for x in subs]
