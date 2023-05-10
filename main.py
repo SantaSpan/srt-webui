@@ -18,7 +18,7 @@ def gradio_translate(target_file, from_language, to_language):
     return spawn_new_process(target_file, from_language, to_language)
 
 def spawn_new_process(target_file, from_language, to_language):
-    cmd = ["./deepl.py", "--filename", target_file, "--out-filename", output_path, "--from_lang", from_language, "--to_lang", to_language]
+    cmd = ["./deepl_tl.py", "--filename", target_file, "--out-filename", output_path, "--from_lang", from_language, "--to_lang", to_language]
     p = sp.Popen(cmd)
     p.wait()
     return output_path
