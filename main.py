@@ -9,8 +9,8 @@ import gradio as gr
 import srt
 from deepl import DeepLCLI
 
-default_from_lang = "en"
-default_to_lang = "ja"
+default_from_lang = "ja"
+default_to_lang = "en"
 output_path = "/content/new.srt"
 
 def gradio_translate(target_file, from_language, to_language):
