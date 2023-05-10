@@ -160,5 +160,8 @@ def gradio():
     demo.launch(share=True)
 
 if __name__ == "__main__":
+    # maybe bad
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     gradio()
     #translate_file("./sawagi.srt", "new_test.srt", langs=["en", "ja"])
