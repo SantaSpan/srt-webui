@@ -32,7 +32,7 @@ def batch_get_translations(deepl, segment_texts):
     batched_segments = batch_deepl_text(segment_texts)
     
     print(f"Text split into {len(batched_segments)} parts")
-    print(f"Estimated time: {len(batched_segments) * 5}")
+    print(f"Estimated time: {(len(batched_segments) * 8) + 7} seconds")
     for count, batch in enumerate(batched_segments):
         translated = deepl.translate(batch)
         batch_segments = translated.split(delimiter)
@@ -52,7 +52,7 @@ def high_level():
     pass
 
 def translate_file(input_file, output_file, langs=["ja", "en"]):
-    deepl = DeepLCLI(langs[0], langs[1], timeout=150000, use_dom_submit=True)
+    deepl = DeepLCLI(langs[0], langs[1], timeout=150000, use_dom_submit=False)
     
     
     with open(input_file, "r", encoding="utf-8") as file:
